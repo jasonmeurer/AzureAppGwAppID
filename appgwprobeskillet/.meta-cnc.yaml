@@ -1,10 +1,10 @@
 # skillet preamble information used by panhandler
 # ---------------------------------------------------------------------
 # unique snippet name
-name: taglab
+name: AzureAppGwAppID
 # label used for menu selection
-label: labslabel
-description: lab with edl tags
+label: appid
+description: Skillet to create the Palo Alto Networks App-ID for the Azure Application Gateway Health Probe
 
 # type of device configuration
 # common types are panorama, panos, and template
@@ -16,7 +16,7 @@ extends:
 # grouping of like snippets for dynamic menu creation in panhandler
 labels:
   collection:
-    - labscollection
+    - appid
 
 # ---------------------------------------------------------------------
 # end of preamble section
@@ -27,37 +27,14 @@ labels:
 # type_hint defines the form field used by panhandler
 # type_hints can be text, ip_address, or dropdown
 variables:
-  - name: edl_name
-    description: edl name (32 total char limit)
-    default: edlname
+  - name: appid_name
+    description: appid name (32 total char limit)
+    default: appidname
     type_hint: text
-  - name: edl_description
-    description: edl_description
-    default: edl_description
+  - name: appid_description
+    description: appid_description
+    default: appid_description
     type_hint: text
-  - name: edl_url
-    description: url for edl
-    default: someurl.com
-    type_hint: text
-  - name: tag_name
-    description: name of tag
-    default: tag_name
-    type_hint: text
-  - name: tag_description
-    description: description of tag
-    default: tag_description
-    type_hint: text            
-  - name: tag_color
-    description: tag color
-    default: color1
-    type_hint: dropdown
-    dd_list:
-      - key: red
-        value: color1
-      - key: orange
-        value: color6
-      - key: blue
-        value: color3       
 # ---------------------------------------------------------------------
 # end of variables section
 
@@ -66,14 +43,8 @@ variables:
 # snippets used for api configuration including xpath and element as file name
 # files will load in the order listed
 snippets:
-  - name: edl
-    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/external-list
-    file: edl.xml
-  - name: tags
-    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/tag
-    file: tags.xml 
-  - name: rules
-    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/security/rules
-    file: rules.xml       
+  - name: appid
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/application
+    file: appid.xml
 # ---------------------------------------------------------------------
 # end of snippets section
