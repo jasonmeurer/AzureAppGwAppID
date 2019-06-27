@@ -35,6 +35,26 @@ variables:
     description: appid_description
     default: appid_description
     type_hint: text
+  - name: address_name
+    description: appgw_source_address_subnet
+    default: appgw_source_address_subnet_name
+    type_hint: text
+  - name: address_cidr
+    description: appgw_source_address_subnet
+    default: 10.0.0.0/24
+    type_hint: text    
+  - name: address_description
+    description: appgw_source_address_description
+    default: appgw_source_address_description
+    type_hint: text      
+  - name: rule_name
+    description: security_rule_name
+    default: security_rule_name
+    type_hint: text
+  - name: rule_description
+    description: security_rule_description
+    default: security_rule_description
+    type_hint: text        
 # ---------------------------------------------------------------------
 # end of variables section
 
@@ -46,5 +66,12 @@ snippets:
   - name: appid
     xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/application
     file: appid.xml
+  - name: address
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/address
+    file: address.xml  
+  - name: rules
+    xpath: /config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/rulebase/security/rules
+    file: rules.xml  
+
 # ---------------------------------------------------------------------
 # end of snippets section
