@@ -56,9 +56,7 @@ snippets:
   - name: move_rule
     path: https://{{ TARGET_IP }}/api/?type=config&action=move&xpath=/config/devices/entry/vsys/entry[@name='vsys1']/rulebase/security/rules/entry[@name='{{ rule_name }}']&where={{ where }}&dst={{ ref_rule }}&key={{ api_key }}
     output_type: xml
-  - name: mcommit
-    path: https://{{ TARGET_IP }}/api/?type=commit&cmd=<commit></commit>&key={{ api_key }}
-    output_type: xml    
+ 
     #outputs:
     #  - name: profileName
     #    capture_pattern: result/{{ profile }}
