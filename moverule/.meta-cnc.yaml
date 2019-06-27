@@ -37,7 +37,7 @@ variables:
     type_hint: text
   - name: where
     description: move before or after other rule
-    default: before
+    default: top
     type_hint: dropdown
     dd_list:
       - key: after
