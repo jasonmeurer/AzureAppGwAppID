@@ -2,7 +2,7 @@ name: move_rule_rest_test
 label: Move security rule
 
 description: |
-  This skillet demonstrates a simple REST api call to move a firewall rule
+  This skillet moves a rule and then perform
 
 type: rest
 
@@ -15,18 +15,6 @@ labels:
     - appid
 
 variables:
-  - name: TARGET_IP
-    description: Host
-    default: 127.0.0.1
-    type_hint: ip_address
-  - name: TARGET_USERNAME
-    description: Username
-    default: admin
-    type_hint: text
-  - name: TARGET_PASSWORD
-    description: Password
-    default: admin
-    type_hint: password
   - name: rule_name
     description: name of security rule to move
     default: rule1
@@ -60,7 +48,7 @@ snippets:
   - name: move_rule
     path: https://{{ TARGET_IP }}/api/?type=config&action=move&xpath=/config/devices/entry/vsys/entry[@name='vsys1']/rulebase/security/rules/entry[@name='{{ rule_name }}']&where={{ where }}{%- if where == 'before' or where == 'after' %}&dst={{ ref_rule }}{% endif %}&key={{ api_key }}
     output_type: xml
-  - name: mcommit
+  - name: commit
     path: https://{{ TARGET_IP }}/api/?type=commit&cmd=<commit></commit>&key={{ api_key }}
     output_type: xml       
     #outputs:
