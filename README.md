@@ -6,10 +6,10 @@ This repo contains 2 skillets.
 
 This is also a workflow skillet included to run them in sequence.  Waiting a bug in panhandler to be fixed which is preventing the execution of the second skillet.
 
-PAN-OS Supported:  v8.1 and v9.0
-Cloud Provider(s) Supported:  Azure
-Type of Skillet:  XML and REST
-Purpose:  Config
+- PAN-OS Supported:  v8.1 and v9.0
+- Cloud Provider(s) Supported:  Azure
+- Type of Skillet:  XML and REST
+- Purpose:  Config
 
 ## Variables AppID
 
