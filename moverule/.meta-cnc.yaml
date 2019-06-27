@@ -15,6 +15,18 @@ labels:
     - appid
 
 variables:
+  - name: TARGET_IP
+    description: Host
+    default: 127.0.0.1
+    type_hint: ip_address
+  - name: TARGET_USERNAME
+    description: Username
+    default: admin
+    type_hint: text
+  - name: TARGET_PASSWORD
+    description: Password
+    default: admin
+    type_hint: password
   - name: rule_name
     description: name of security rule to move
     default: rule1
