@@ -12,6 +12,7 @@ labels:
   collection:
     - Configure
     - NGFW
+    - appid
 
 variables:
   - name: TARGET_IP
