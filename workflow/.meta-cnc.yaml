@@ -48,14 +48,30 @@ variables:
   - name: rule_description
     description: security_rule_description
     default: security_rule_description
-    type_hint: text  
+    type_hint: text 
+  - name: TARGET_IP
+    description: Host
+    default: 127.0.0.1
+    type_hint: ip_address
+  - name: TARGET_USERNAME
+    description: Username
+    default: admin
+    type_hint: text
+  - name: TARGET_PASSWORD
+    description: Password
+    default: admin
+    type_hint: password
+  - name: rule_name
+    description: name of security rule to move
+    default: rule1
+    type_hint: text
   - name: ref_rule
     description: rule to move before or after
     default: rule2
     type_hint: text
   - name: where
     description: move before or after other rule
-    default: before
+    default: top
     type_hint: dropdown
     dd_list:
       - key: after
