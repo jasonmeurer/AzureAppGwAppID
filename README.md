@@ -11,7 +11,7 @@ Cloud Provider(s) Supported:  Azure
 Type of Skillet:  XML and REST
 Purpose:  Config
 
-##Variables AppID
+## Variables AppID
 
   - name: appid_name
     - description: appid name (32 total char limit)
@@ -42,7 +42,7 @@ Purpose:  Config
     - default: security_rule_description
     - type_hint: text  
 
-##Variables - Move Rule
+## Variables - Move Rule
   - name: TARGET_IP
     - description: Host
     - default: 127.0.0.1
