@@ -13,6 +13,7 @@ labels:
     - Configure
     - NGFW
     - appid
+    - Azure
 
 variables:
   - name: TARGET_IP
