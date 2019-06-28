@@ -1,5 +1,5 @@
 name: move_rule_rest
-label: Move security rule
+label: Move security rule - Azure App-ID
 
 description: |
   This skillet moves a rule and then perform
